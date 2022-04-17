@@ -58,7 +58,10 @@ int findMinimumCost(string str) {
 }
 int main()
 {
-    
+    string s="{}{}}}";
+	int ans=findMinimumCost(s);
+	cout<<ans;
+	//minimum change required to make all braces valid
 
 return 0;
 }

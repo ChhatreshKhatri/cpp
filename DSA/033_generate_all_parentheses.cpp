@@ -23,11 +23,12 @@ int main()
     vector<string> s;
     int n=3;
     s=validParenthesis(n);
-    for(auto x: s){
-        for(int i=0;i<x.length();i++){
-            cout<<s[i]<<endl;
-        }
-    }
+    // for(auto x: s){
+    //     for(int i=0;i<x.length();i++){
+    //         cout<<s[i]<<endl;
+    //     }
+    // }
+    for(int i=0;i<s.size();i++)cout<<s[i]<<endl;
 
 return 0;
 }

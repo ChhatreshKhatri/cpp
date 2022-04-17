@@ -21,7 +21,13 @@ vector<int> nextSmallerElement(vector<int> &arr, int n)
 }
 int main()
 {
-    
+    vector<int> arr={2,1,4,3};
+	vector<int> ans=nextSmallerElement(arr,4);
+	// for(auto x:ans){
+		for(int i=0;i<ans.size();i++){
+			cout<<ans[i]<<" ";
+		}
+	// }
 
 return 0;
 }
