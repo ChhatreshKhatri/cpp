@@ -62,7 +62,8 @@ public:
 };
 int main()
 {
-    
+    //tc-O(1)    push-O(1) pop-O(1)
+    //sc-O(n+s)  n+s+s
 
 return 0;
 }
