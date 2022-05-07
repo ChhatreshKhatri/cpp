@@ -1,4 +1,3 @@
 .vscode/
 #ignore all exe 
 *.exe
-/test.cpp
