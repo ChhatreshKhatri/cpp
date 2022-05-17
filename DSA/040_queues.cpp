@@ -62,6 +62,14 @@ public:
     int size(){
         return rear-qfront;
     }
+
+    void print(){
+        for(int i=qfront;i<rear;i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+        return;
+    }
 };
 int main()
 {
@@ -84,10 +92,11 @@ int main()
     q2.enqueue(50);
     q2.enqueue(500);
     q2.enqueue(5000);
+    q2.print();
     cout<<"queue2 size "<<q2.size()<<endl;
     cout<<"element dequeued "<<q2.dequeue()<<endl;
     cout<<"front element-> "<<q2.front()<<endl;
-
+    q2.print();
     
 
 return 0;
