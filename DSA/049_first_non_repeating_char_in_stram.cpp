@@ -31,6 +31,8 @@ string FirstNonRepeating(string A)
 }
 int main()
 {
-
+    string s="aabc";
+    string ans=FirstNonRepeating(s);
+    cout<<ans;
     return 0;
 }
