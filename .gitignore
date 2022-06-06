@@ -2,3 +2,5 @@
 #ignore all exe 
 *.exe
 test.cpp
+test2.cpp
+tempCodeRunnerFile.cpp
