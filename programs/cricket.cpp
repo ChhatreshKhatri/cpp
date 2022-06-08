@@ -86,7 +86,8 @@ int a,b,x,y;
 
  int p = y%6;
 
- float k = ((float)n + (float)p/10);
+ float k = ((float)n + (float)p/10);// 7 + 0.3 
+ //as 42 i.e 7 overs and 3 balls   7.3
 
  float d = x/k;
 
