@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+//https://youtu.be/0N3RCWa8jFM
+
 /*vector<vector<int>> recurpwrset(vector<int>&v,int i){
     if(i>=v.size()) return {{}};
     vector<vector<int>> partialAns=recurpwrset(v,i+1);
