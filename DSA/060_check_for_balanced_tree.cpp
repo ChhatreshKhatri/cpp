@@ -1,17 +1,57 @@
 #include <bits/stdc++.h>
 using namespace std;
-struct Node
+class Node
 {
+    public:
     int data;
-    struct Node *left;
-    struct Node *right;
+    Node *left;
+    Node *right;
 
     Node(int x)
     {
-        data = x;
-        left = right = NULL;
+        this->data = x;
+        this->left = NULL;
+        this->right=NULL;
     }
 };
+Node *buildTree(Node *root){
+    int data;
+    cout<<"enter data for node"<<endl;
+    cin>>data;
+    if(root==NULL){
+        root=new Node(data);
+    }
+    if(data==-1)return NULL;
+
+    cout<<"enter data to insert left of "<<root->data<<endl;
+    root->left=buildTree(root->left);
+    cout<<"enter data to insert right of "<<root->data<<endl;
+    root->right=buildTree(root->right);
+
+    return root;
+}
+
+void levelOrderTraversal(Node *root){
+    queue<Node*> q;
+    q.push(root);
+    q.push(NULL);
+    
+    while(!q.empty()){
+        Node* temp=q.front();
+        q.pop();
+        //important to remove the node from queue when it is being processed and let other node get in front
+        if(temp==NULL){
+            //either root is NULL or the previous level is completed
+            cout<<endl;
+            if(!q.empty())q.push(NULL);//queue has some node left
+        }
+        else{
+            cout<<temp->data<<" ";
+            if(temp->left)q.push(temp->left);
+            if(temp->right)q.push(temp->right);
+        }
+    }
+}
 int height(struct Node *node)
 {
     // base case
@@ -34,9 +74,10 @@ bool isBalanced(Node *root)
     bool left = isBalanced(root->left);
     bool right = isBalanced(root->right);
     bool diff = abs(height(root->left) - height(root->right)) <= 1;
+    //difference between left and right sub tree node height cannot be more than 1 for a balanced tree
     if (left && right && diff)
     {
-        return 1;
+        return true;
     }
     else
     {
@@ -69,10 +110,16 @@ pair<bool,int> isBalancedFast(Node* root){
     else ans.first=false;
 
     return ans;
-
 }
 int main()
 {
-
+    Node *root=NULL;
+    root=buildTree(root);
+    //balance data-> 1 2 4 -1 7 -1 -1 5 -1 -1 3 6 -1 8 -1 -1 9 10 -1 -1 -1
+    //not balance data-> 1 2 4 -1 7 -1 -1 5 -1 -1 3 6 -1 8 -1 -1 9 10 11 -1 -1 -1 -1 
+    levelOrderTraversal(root);
+    pair<bool,int> check=isBalancedFast(root);
+    if(check.first==true)cout<<"tree is balanced"<<endl;
+    else cout<<"tree is not balanced";
     return 0;
 }

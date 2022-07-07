@@ -42,11 +42,12 @@ void levelOrderTraversal(node *root)
     {
         node *temp = q.front();
         q.pop();
+
         if (temp == NULL){
             // purana complete hogya toh next pe chalo
             cout << endl;
             if (!q.empty()){
-                // queue still has child node
+                // queue still has child nodes
                 q.push(NULL);
             }
         }
