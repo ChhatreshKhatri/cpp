@@ -27,7 +27,7 @@ vector<vector<int>> permute(vector<int> &nums)
 {
     vector<vector<int>> ans;
     vector<int> ds;
-    int freq[nums.size()];
+    int freq[nums.size()];//000 pick or not pick the index->extra space
     for (int i = 0; i < nums.size(); i++)
         freq[i] = 0; // to initialize it as zero
     recurPermute(ds, nums, ans, freq);
@@ -36,8 +36,24 @@ vector<vector<int>> permute(vector<int> &nums)
 }
 
 // 2nd
-//TC->O() SC->O()
-
+//TC->O(n*n!) n for element store n! for recursion SC->O(n) recursion space and n! for ans
+void recurPermute(int index,vector<int> &nums,vector<vector<int>> &ans){
+        if(index==nums.size()){
+            ans.push_back(nums);
+            return;
+        }
+        for(int i=index;i<nums.size();i++){
+            swap(nums[index],nums[i]);//swap
+            recurPermute(index+1,nums,ans);//next state
+            swap(nums[index],nums[i]);//reswap/ back tracked
+        }
+    }
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        recurPermute(0,nums,ans);
+        
+        return ans;
+    }
 int main()
 {
 
