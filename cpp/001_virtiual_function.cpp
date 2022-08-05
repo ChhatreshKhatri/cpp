@@ -22,6 +22,10 @@ int main(){
      A *a=new B;
      a->fun();
      a->fun1();
+     B *b=new B;
+     b->fun();
+     b->fun1();
+
 
      return 0;
 }
