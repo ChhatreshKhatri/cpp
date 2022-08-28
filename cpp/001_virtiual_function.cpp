@@ -19,9 +19,14 @@ class B: public A{
           }
 };
 int main(){
+     A *aa=new A;
+     aa->fun();
+     aa->fun1();
+
      A *a=new B;
      a->fun();
      a->fun1();
+     
      B *b=new B;
      b->fun();
      b->fun1();
