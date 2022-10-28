@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 void solve(vector<int> v, int n){
-    if(n==0){
-        cout<<"value is 0";
+    if(n<=0){
+        cout<<"value is 0 or -ve";
         return;
     }
     int count=0;
