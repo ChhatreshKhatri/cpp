@@ -18,5 +18,5 @@ c/c++ extension inbuilt
                 "-o",
                 "${fileDirname}\\z_output.exe",
                 "&&" , 
-                "${z_output}.exe<D:\\Data\\Code\\c++\\inputf.in>D:\\Data\\Code\\c++\\outputf.in"
+                "z_output.exe<D:\\Data\\Code\\c++\\inputf.in>D:\\Data\\Code\\c++\\outputf.in"
             ],
