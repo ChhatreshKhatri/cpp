@@ -29,11 +29,25 @@ void primeFactors(int n)
         else c++;
     }
 }
+void primefactorsOptimized(int n){
+    while(n%2==0){
+        cout<<2<<" ";
+        n/=2;
+    }
+    for(int i=3;i<=sqrt(n);i=i+2){
+        while(n%i==0){
+            cout<<i<<" ";
+            n/=i;
+        }
+    }
+    if(n>2)cout<<n<<" ";//for primes
+}
 int main(){
     int n;
     cin>>n;
-    prime_factors(n);cout<<endl;
-    primeFactors(n);
+    prime_factors(n);cout<<endl;//TC O(n^2)
+    primeFactors(n);cout<<endl;//TC O(n)
+    primefactorsOptimized(n);//TC O(log(n))
 
     return 0;
 }
