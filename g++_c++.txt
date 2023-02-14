@@ -8,7 +8,7 @@ sublime text
 
 vs code
 code runner
-"cpp": "cd $dir && g++ $fileName -o z_output && z_output<D:\\Data\\Code\\c++\\inputf.in>D:\\Data\\Code\\c++\\outputf.in"
+"cpp": "cd $dir && g++ $fileName -o z_output && z_output<input file path>output file path"
 
 c/c++ extension inbuilt
 "args": [

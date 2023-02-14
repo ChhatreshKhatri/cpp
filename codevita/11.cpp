@@ -3,8 +3,9 @@ using namespace std;
 
 string sol(string s, string c)
 {
-    string s="palskdjfieuryt93516247oh",c="Philacodist 2021",ans,fans;
+    // string s="palskdjfieuryt93516247oh",c="Philacodist 2021",ans,fans;
     //cin >>s>>c;
+    string ans,fans;
     map<char,int> seq,cc;
     vector <char> key;
     set <int> spaces;
@@ -17,7 +18,7 @@ string sol(string s, string c)
         if(seq[s[i]]>1)
         {
             cout << "New Language Error";
-            return -1;
+            return "-1";
         }
     }
     for(int i=0;i<c.size();i++)
@@ -47,7 +48,7 @@ string sol(string s, string c)
             }
         }
     }
-    cout << ans;
+    cout <<"ans="<< ans;
     return 0; 
     
 }
@@ -63,4 +64,5 @@ int main()
             fans.push_back(' ');
         }
     }
+    
 }
